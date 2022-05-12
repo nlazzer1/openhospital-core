@@ -272,9 +272,9 @@ public class Tests extends OHCoreTestCase {
 		Opd foundOpd = opdIoOperationRepository.findById(code).get();
 		foundOpd.setReason("update reason");
 		foundOpd.setAnamnesis("update anamnesis");
-		foundOpd.setTherapies("update therapie");
+		foundOpd.setTherapies("update therapies");
 		foundOpd.setAllergies("update allergies");
-		foundOpd.setPrescription("update presciption");
+		foundOpd.setPrescription("update prescription");
 		Opd result = opdIoOperation.updateOpd(foundOpd);
 		Opd updateOpd = opdIoOperationRepository.findById(code).get();
 		assertThat(result).isNotNull();
@@ -540,9 +540,9 @@ public class Tests extends OHCoreTestCase {
 		assertThat(opdBrowserManager.newOpd(opd)).isTrue();
 		opd.setReason("update reason");
 		opd.setAnamnesis("update anamnesis");
-		opd.setTherapies("update therapie");
+		opd.setTherapies("update therapies");
 		opd.setAllergies("update allergies");
-		opd.setPrescription("update presciption");
+		opd.setPrescription("update prescription");
 		assertThat(opdBrowserManager.updateOpd(opd)).isNotNull();
 		Opd updateOpd = opdIoOperationRepository.findById(opd.getCode()).get();
 		assertThat(updateOpd.getReason()).isEqualTo("update reason");
